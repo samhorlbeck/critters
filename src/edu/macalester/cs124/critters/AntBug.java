@@ -33,6 +33,8 @@ public class AntBug extends Critter {
         
         addEye(Eye.createStandardEye(-18, 40, 10, 0.46, 0.18, Color.BLUE));
         addEye(Eye.createStandardEye( 18, 40, 10, 0.46, 0.18, Color.RED));
+        
+        getGraphics().scale(0.4);
 	}
 
 	private void createLeg(double x0, double y0, double x1, double y1, double x2, double y2) {
