@@ -29,7 +29,7 @@ public class Llcoolj extends Critter{
        
 		GImage LlcoolJ = null;
 		try {
-			LlcoolJ = new GImage(ImageIO.read(getClass().getResource("/LLCOOLJ.jpeg")));
+			LlcoolJ = new GImage(ImageIO.read(getClass().getResource("/LLCOOLJ.png")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
