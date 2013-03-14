@@ -13,6 +13,16 @@ public class Eye {
     private final GPoint pupilRestPosition;
     private final double radius;
     
+    /**
+     * Creates a white eye with a black pupil, a white ocular highlight, and a colored iris.
+     * @param x             Eye position
+     * @param y             Eye position
+     * @param r             Eye radius
+     * @param pupilSize     Proportion of the pupil radius to the eye radius
+     * @param highlightSize Proportion of the highlight radius to the eye radius
+     * @param iris          Color of the iris
+     * @return
+     */
     public static Eye createStandardEye(double x, double y, double r, double pupilSize, double highlightSize, Color iris) {
         GOval white = new GOval(-r, -r, r * 2, r * 2);
         white.setFilled(true);
@@ -41,7 +51,11 @@ public class Eye {
         
         return new Eye(group, pupil, r - pupilR - 2);
     }
-
+    
+    /**
+     * Creates a new eye with custom graphics. The given pupil object with move on the edge of a circle
+     * centered about its current location.
+     */
     public Eye(GCompound group, GObject pupil, double radius) {
         this.graphics = group;
         this.pupil = pupil;
@@ -53,6 +67,10 @@ public class Eye {
         return graphics;
     }
     
+    /**
+     * Causes the eyes to move in the direction of the given vector.
+     * The dt parameter is necessary because the eyes do not move instantaneously.
+     */
     public void lookInDirectionOf(double dx, double dy, double dt) {
         double dist = Math.hypot(dx, dy);
         dx /= dist;
